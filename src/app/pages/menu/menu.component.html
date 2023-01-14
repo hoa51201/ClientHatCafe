@@ -1,0 +1,140 @@
+        <div class="page-header black-overlay">
+            <div class="container breadcrumb-section">
+                <div class="row pad-s15">
+                    <div class="col-md-12">
+                        <h2>Dishes Sidebar</h2>
+                        <div class="clear"></div>
+                        <div class="breadcrumb-box">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="active">Dishes Sidebar</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//==Page Header End==//-->
+        <!--//=========Dishes Page Start=========//-->
+        <section class="wa-dishes-main padTB100">
+            <div class="container">
+                <div class="row">
+                    <!--//=========Dishes Right Section Start=========//-->
+                    <div class="col-md-9 col-sm-8 col-xs-12 pull-right">
+                        <div class="row">
+                            <ul id="show-item">
+                                <li *ngFor="let item of collection | paginate: { itemsPerPage: 6, currentPage: numberPages }"> 
+                                    <!--Dish Item-->
+                                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                        <div class="wa-dishes">
+                                            <div class="wa-dishes-thumbnail wa-item">
+                                                <!-- muốn hiện ảnh thêm từ admin sang thì bỏ địa chỉ t.mục (sẽ tự động load theo htpps)-->
+                                                <!-- <img style=" width: 250px; height: 249px;" src="{{item.product_image}}" alt=""> -->
+                                                
+                                                <img style=" width: 250px; height: 249px;" src="assets/Images/image/products/{{item.product_image}}" alt="">
+                                                <div class="caption">
+                                                    <div class="caption-text">
+                                                        <ul class="wa-dishes-icon">
+                                                            <li><a href="#" title="Add to cart"><i class="fa fa-shopping-cart"></i></a></li>
+                                                            <li><a href="#0" class="wa-trigger quickview-box-btn" title="Quick View"><i class="fa fa-eye"></i></a></li>
+                                                            <li><a href="#" title="Add to wishlist"><i class="fa fa-heart"></i></a></li>
+                                                            <li><a href="#" title="Add to compare"><i class="fa fa-random"></i></a></li>
+                                                        </ul>
+                                                        <div class="clear"></div>
+                                                        <button 
+
+                                                [attr.data-id]='item.product_id' 
+                                                [attr.data-images]='item.product_image' 
+                                                [attr.data-name]='item.product_name' 
+                                                [attr.data-prices]='item.product_prices'
+                                                
+                                                class="theme-button marT10 cart-add">order Now</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="wa-dishes-caption">
+                                                <h2><a [routerLink]="['product/']+item.product_slug">
+                                                    {{item.product_name}}</a>
+                                                </h2>
+                                                <div class="clear"></div>
+                                                <ul class="ratings">
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                                    <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                                {{item.product_prices | number}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                              </ul>
+                            <div class="clear"></div>
+                            <div class="col-md-12">
+                                <!-- <div class="paginate">
+                                    <pagination-controls (pageChange)="numberPages = $event"></pagination-controls>
+                                </div> -->
+                                <!--//==Pagination Start==//-->
+                                <div class="styled-pagination padB30 text-right paginate" >
+                                    <!-- <ul>
+                                        <li><a class="prev" href="#"><i class="fa fa-angle-left"></i></a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#" class="active">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a class="next" href="#"><i class="fa fa-angle-right"></i></a></li>
+                                    </ul> -->
+                                    <pagination-controls (pageChange)="numberPages = $event"></pagination-controls>
+                                </div>
+                                <!--//==Pagination End==//-->
+                            </div>
+                        </div>
+                    </div>
+                    <!--//=========Dishes Right Section End=========//-->
+                    <!--//=========Left Sidebar Start=========//-->
+                    <div class="col-md-3 col-sm-4 col-xs-12">
+                        <div class="row">
+                            <div class="sidebar">
+                                <div class="col-md-12">
+                                    <!--widget-->
+                                    <div class="widget">
+                                        <h4>Article search</h4>
+                                        <form method="post" action="#">
+                                            <div class="form-group clearfix">
+                                                
+                                                <input type="search" name="search" value=""  placeholder="Search Here">
+                                                <!-- <li *ngFor="let a of collection"><a [routerLink]="['/menu']"
+                                                    [queryParams]="{ product_name: a.product_name}">{{a.product_name}}</a></li> -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--widget-->
+                                    <div class="widget">
+                                        <h4>popular Tags</h4>
+                                        <!--//==Item tag Start==//-->
+                                        <div class="tag-list">
+                                            <a href="#" class="">Videos</a>
+                                            <a href="#" class="">Written Articels</a>
+                                            <a href="#" class="">Written Articels</a>
+                                            <a href="#" class="">Videos</a>
+                                            <a href="#" class="">Videos</a>
+                                            <a href="#" class="">Written Articels</a>
+                                            <a href="#" class="">Written Articels</a>						
+                                            <a href="#" class="">Videos</a>
+                                        </div>
+                                        <!--//==Item tag End==//-->
+                                    </div>
+                                    <!--widget-->
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//=========Left Sidebar End=========//-->
+                </div>
+            </div>
+        </section>

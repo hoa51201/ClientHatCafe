@@ -1,0 +1,221 @@
+        <!--//==Page Header Start==//-->	  
+        <div class="page-header black-overlay">
+            <div class="container breadcrumb-section">
+                <div class="row pad-s15">
+                    <div class="col-md-12">
+                        <h2>Checkout Page</h2>
+                        <div class="clear"></div>
+                        <div class="breadcrumb-box">
+                            <ul class="breadcrumb">
+                                <li>
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="active">Checkout Page</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--//==Page Header End==//-->
+        <!--//== Order Billing and shipping Section Start ==//-->  
+        <section class="checkout-page padTB100">
+            <div class="container">
+                <div class="row pad-s15">
+                    <!--//==Billings and Shipping Form Start==//-->	
+                    <form class="contact-form" [formGroup]="dataService.form">
+                        <div class="col-sm-12 col-md-12 wv_checkout_left marT30">
+                            <!--//== Section Heading Start ==//-->
+                            <div class="left-title">
+                                <h2>Billings details <span class="heading-border"></span></h2>
+                                <div class="clear"></div>
+                            </div>
+                            <!--//== Section Heading End ==//-->
+                            <!--//==Billings Form Start==//-->	
+                            <div class="row">
+                                <!--//==Billings Input Field==//-->
+                                <div class="col-md-12 form-group">
+                                    <input formControlName='name' class="wv_form_focus" type="text" placeholder="Full Name:">
+                                    <label  *ngIf="dataService.form.get('name').touched && dataService.form.get('name').errors" class="label-messages-errors wv_form_focus">Tên không hợp lệ</label>
+                                </div>
+                                <!--//==Billings Input Field==//-->
+                                <div class="col-md-12 form-group">
+                                    <input formControlName='email' class="wv_form_focus" type="email" id="exampleInputEmail" placeholder="Email:">
+                                    <label  *ngIf="dataService.form.get('email').touched && dataService.form.get('email').errors" class="label-messages-errors wv_form_focus">Email không định dạng</label>    
+                                </div>
+                                <div class="col-md-12 form-group">
+                                    <input formControlName='phone' class="wv_form_focus" type="text" placeholder="Phone Number:">
+                                    <label *ngIf="dataService.form.get('phone').touched && dataService.form.get('phone').errors" class="label-messages-errors wv_form_focus">Số điện thoại không hợp lệ</label>    
+                                </div>
+                                <!--//==Billings Input Field==//-->
+                                <div class="col-md-12 form-group">
+                                    <input formControlName='address' class="wv_form_focus" type="text" placeholder="Street Address:">
+                                    <label *ngIf="dataService.form.get('address').touched && dataService.form.get('address').errors" class="label-messages-errors wv_form_focus">Địa chỉ không được để trống</label>    
+                                </div>
+                                
+                            </div>
+                            <!--//==Billings Form Start==//-->	
+                        </div>
+                    </form>
+                    <!--//==Billings and Shipping Form End==//-->	
+                </div>
+            </div>
+        </section>
+        <!--//== Order Billing and shipping Section End ==//-->  	
+        <!--//== Place Order Start ==//-->  
+        <section class="cart-page grey-bg padTB100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-10 col-md-8 col-xs-offset-0 col-sm-offset-1 col-md-offset-2 wv_subtotal">
+                        <!--//== Section Heading Start ==//-->
+                        <div class="centered-title">
+                            <h2>Order Detail <span class="heading-border"></span></h2>
+                            <div class="clear"></div>
+                            <em>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo <br>inventore veritatis et quasi architecto beatae</em>
+                        </div>
+                        <!--//== Section Heading End ==//-->
+                        <!--//== Total Price Section Start ==//-->
+                        <div class="hidden-xs">
+                            <div class="col-md-2 col-sm-2 grey-bg">
+                                <div class="order-data text-center pad15">
+                                    <strong>Hình ảnh</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 grey-bg">
+                                <div class="order-data text-center pad15">
+                                    <strong>Tên sản phẩm</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 grey-bg">
+                                <div class="order-data  text-center pad15">
+                                    <strong>Giá</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 grey-bg">
+                                <div class="order-data text-center pad15">
+                                    <strong>Số lượng</strong>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2 grey-bg">
+                                <div class="order-data text-center pad15">
+                                    <strong>Tổng</strong>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        <div class = "cart-line-items">
+                    
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12" *ngFor="let p of cart; index as i">
+                                <div class="order-row padTB20">
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="order-data order-table text-center padTB15">
+                                            <div class="order-table-cell">
+                                                <a href="dishes-detail.html"><img src="assets/Images/image/products/{{p.images}}" alt=""></a>
+                                                <div class="clear"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="order-data order-table text-center">
+                                            <div class="order-table-cell order-text">           
+                                                <strong><a href="dishes-detail.html">{{p.name}}</a></strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="order-data order-table text-center">
+                                            <div class="order-table-cell order-text">
+                                                <strong>{{p.prices | number}}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="order-data order-table text-center">
+                                            <div class="order-table-cell order-text">
+                                                <strong>{{p.quantity }}</strong>
+                                                <!-- <input type="number" (change)="editCart(p, i)" min=1 [(ngModel)]="p.quantity" class="qty" name="qty1"> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="order-data order-table text-center">
+                                            <div class="order-table-cell order-text">
+                                                <strong>{{p.prices * p.quantity | number}}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                            <div class="wv_totaling">
+                                 <!-- <div class="col-md-2 col-sm-2"> -->
+                                   
+                                    <strong class=" col-xs-12 marT30"  style="text-align:center">Tổng tiền: {{total_price | number}} </strong>
+                                <!-- </div> -->
+                            </div>
+                            <div class="wv_totaling">
+                                <button [disabled]="!dataService.form.valid"  (click)="submit()"class="theme-button col-xs-12 marT30">Place Order</button>
+                            </div>
+                            <div class="clear"></div>
+                                </div>
+                            </div>
+                        </div>
+                    <!-- </div> -->
+                <!-- </div> -->
+                        <!-- <div class="wv_shipping"> -->
+                            <!-- <div class="wv_subtotaling wv_checkout_subtotal"> -->
+                                <!-- <div class="col-xs-6 col-md-6 wv_subtotal_left textL"> -->
+                                    <!-- <p>Tên sản phẩm</p> -->
+                                <!-- </div> -->
+                                <!-- <div class="col-xs-6 col-md-6 wv_subtotal_right textR">
+                                    <p>Giá</p>
+                                </div>
+                                <div class="col-xs-6 col-md-6 wv_subtotal_right textR">
+                                    <p>Số lượng</p>
+                                </div> -->
+                                <!-- <div class="col-xs-6 col-md-6 wv_subtotal_right textR">
+                                    <p>Tổng </p>
+                                </div>
+                            </div>
+                            <div class="wv_subtotaling wv_checkout_subtotal1 padT10">
+                                <div class="cart-line-items-check-out"> -->
+                                    <!-- <div class="order-table-cell order-text">
+                                        <strong>{{p.prices | number}}</strong>
+                                    </div> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                            <!-- <div class="wv_subtotaling">
+                                <div class="col-xs-6 col-md-6 wv_subtotal_left textL">
+                                    <p>subtotal</p>
+                                </div>
+                                <div class="col-xs-6 col-md-6 wv_subtotal_right textR">
+                                    <p>$340.00</p>
+                                </div>
+                            </div>
+                            <div class="wv_subtotaling">
+                                <div class="col-xs-6 col-md-6 wv_subtotal_left textL">
+                                    <p>Deduction</p>
+                                </div>
+                                <div class="col-xs-6 col-md-6 wv_subtotal_right textR">
+                                    <p>-$15.00</p>
+                                </div>
+                            </div> -->
+                            
+                            <!-- <div class="wv_totaling">
+                                <div class="col-xs-6 col-md-6 wv_total_left textL">
+                                    <p>Total</p>
+                                </div>
+                                <div class="col-xs-6 col-md-6 wv_total_right textR cart-subtotal_l">
+                                    <p></p>
+                                </div>
+                            </div>
+                            <div class="wv_totaling">
+                                <button [disabled]="!dataService.form.valid"  (click)="submit()"class="theme-button col-xs-12 marT30">Place Order</button>
+                            </div>
+                            <div class="clear"></div> -->
+                        <!-- </div> -->
+                        <!--//== Total Price Section End ==//-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--//== Place Order End ==//--> 

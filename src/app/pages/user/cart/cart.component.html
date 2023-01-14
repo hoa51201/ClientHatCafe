@@ -1,0 +1,135 @@
+<div class="page-header black-overlay">
+    <div class="container breadcrumb-section">
+        <div class="row pad-s15">
+            <div class="col-md-12">
+                <h2>Cart Page</h2>
+                <div class="clear"></div>
+                <div class="breadcrumb-box">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="active">Cart Page</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//==Page Header End==//-->
+<!--//==Orders Section Start==//-->	  
+<section class="cart-page padTB100">
+    <div class="container" >
+        <div class="row wv-pads15 cart-table ">
+            <div class="col-md-12 col-sm-12">
+                <!--//==Section Heading Start==//-->
+                <div class="centered-title">
+                    <h2>Giỏ hàng của bạn <span class="heading-border"></span></h2>
+                    <div class="clear"></div>
+                    <em>Cảm ơn bạn đã tin tưởng chúng tôi</em>
+                </div>
+                <!--//==Section Heading End==//-->
+                <div class="clear"></div>
+                <!--//==Order Table titles Start==//-->
+                <div class="hidden-xs">
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data text-center pad15">
+                            <strong>Hình ảnh</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data text-center pad15">
+                            <strong>Tên sản phẩm</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data  text-center pad15">
+                            <strong>Giá</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data text-center pad15">
+                            <strong>Số lượng</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data text-center pad15">
+                            <strong>Tổng</strong>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-2 grey-bg">
+                        <div class="order-data text-center pad15">
+                            <strong>Xóa</strong>
+                        </div>
+                    </div>
+                </div>
+                <!--//==Order Table titles End==//-->
+                <!--//==Order Table Row ==//-->
+
+                <!--//==Hiện thị giỏ hàng ==//-->
+                <div class = "cart-line-items">
+                    
+                </div>
+                <div class="row">
+                    <div class="col-md-12" *ngFor="let p of cart; index as i">
+                        <div class="order-row padTB20">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center padTB15">
+                                    <div class="order-table-cell">
+                                        <a href="dishes-detail.html"><img src="assets/Images/image/products/{{p.images}}" alt=""></a>
+                                        <div class="clear"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center">
+                                    <div class="order-table-cell order-text">           
+                                        <strong><a href="dishes-detail.html">{{p.name}}</a></strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center">
+                                    <div class="order-table-cell order-text">
+                                        <strong>{{p.prices | number}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center">
+                                    <div class="order-table-cell order-text">
+                                        <input type="number" (change)="editCart(p, i)" min=1 [(ngModel)]="p.quantity" class="qty" name="qty1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center">
+                                    <div class="order-table-cell order-text">
+                                        <strong>{{p.prices * p.quantity | number}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-2 col-sm-2">
+                                <div class="order-data order-table text-center">
+                                    <div class="order-table-cell order-text">
+                                        <strong><p (click)="deleteProduct(i)"><i class="fa fa-trash" aria-hidden="true"></i></p></strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-is-empty" *ngIf="cart.length == 0">Giỏ hàng của bạn đang trống</div>
+        <div class="check-out-div">
+            <h2 class="btn-in-cart order-data text-center pad15">Tổng tiền</h2>
+            <h2 class="cart-subtotal_l btn-in-cart order-data text-center pad15" >{{total_price | number}} </h2>
+        </div>
+        <div class="check-out-div">
+            <a routerLink="/index" class="btn btn-success btn-in-cart" id="check-out-cart">Tiếp tục mua sắm </a>
+            <a routerLink="/checkout" class="btn btn-success btn-in-cart" id="check-out-cart">Đặt hàng</a> 
+        </div>
+        
+    </div>
+</section>

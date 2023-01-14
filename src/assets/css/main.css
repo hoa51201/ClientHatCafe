@@ -1,0 +1,70 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Aashi Restora - Multipurpose Html5 Template For Restaurant, Cake, Bar and Cafe shop
+Version:	1.0.0
+Assigned to:	Themeforest
+Primary use:	Restaurant, Cake, Icecream, Bar, Cafe shop, Bootstrap, Responsive   
+-------------------------------------------------------------------*/
+/*------------------------------------------------------------------
+[Table of contents]
+
+1 Body / body
+2 Common Css
+   2.1 Reset Style / img
+   2.2 Form Elements / input
+   2.3 Blockquote / blockquote
+   2.4 Button Style / .theme-button
+   2.5 Padding / .pad0
+   2.6 Margin / .mar0
+3 Header Style / #main-header
+   3.1 Top Header / #top-bar
+   3.2 Navigation Bar / .wa-main-menu
+4 Main Slider / .wa_main_bn_wrap
+5 Heading Style / .centered-title
+6 About / .about-section
+7 Services / .services
+8 Dishes Grid / .wa-dishes 
+9 Our Team / .our-team-main
+10 Dishes Menu / #dishess-menu 
+11 Testimonial / .testimonial
+12 Price and Plans / .price-plans
+13 Fun Facts / .fun-facts
+14 Blogs / .blogs_main
+15 Partner / .wa-partners
+16 Background Image / .special-style
+17 Other Pages Section
+	17.1 Page Header / .page-header
+	17.2 Cart Page / .cart-page
+	17.3 Checkout Page / .checkout-page
+	17.4 FAQs / .faqs-accordion
+	17.5 Pagination / .styled-pagination
+	17.6 Comment Area / .reviews-container
+18 Sidebar / .sidebar
+19 Extra Styles / .ratings
+20 Preloader / .preloader
+21 Owl Carousel Style
+	21.1 Carousel Styles1 / .carousel-style-1
+	21.2 Carousel Styles2 / .carousel-style-2
+22 Footer / #main-footer
+
+-------------------------------------------------------------------*/
+
+/* Fonts include */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Kaushan+Script');
+/* Bootstrap core CSS*/
+@import url("assets/css/bootstrap.min.css");
+
+/*Plugins CSS */	
+@import url("assets/plugins/menu/css/hover-dropdown-menu.css");
+@import url("assets/plugins/font-awesome/css/font-awesome.min.css");
+@import url("assets/plugins/owl-carousel/css/owl.carousel.css");
+@import url("assets/plugins/fancymedia/css/jquery.fancybox.css");
+@import url("assets/css/jquery-ui.css");
+@import url("assets/plugins/switcher/switcher.css");
+
+/*Defaults CSS SETTINGS */	
+@import url("assets/css/style.css");
+
+/*Template Media Query CSS */
+@import url("assets/css/responsive.css");

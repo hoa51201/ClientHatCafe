@@ -1,0 +1,98 @@
+<header id="main-header">
+    <!--//==Topbar Start==//-->
+    <div id="top-bar" class="wa-theme-bg color-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 pull-left">
+                    <ul class="inline">
+                        <li><a href="#"><i class="fa fa-phone" aria-hidden="true"></i> 078 596 1686</a></li>
+                        <li class="textnormal"><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> lacafe@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6 pull-right">
+                    <ul class="inline">
+                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+                        <li><a routerLink="cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//==Topbar End==//-->
+    <!--//==Navbar Start==//-->
+    <div id="main-menu" class="wa-main-menu">
+        <div class="wathemes-menu relative">
+            <div class="navbar navbar-default navbar-bg-light" role="navigation">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="navbar-header">
+                                <!-- Button For Responsive toggle -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span></button> 
+                                <!-- Logo -->
+                                <a class="navbar-brand" href="index.html">
+                                <img class="site_logo" alt="Site Logo" style="width: 6rem;"  src="assets/img/hatcafe/logo3.jpg" />
+                                </a>
+                            </div>
+                            <!-- Navbar Collapse -->
+                            <div class="navbar-collapse collapse">
+                                <!-- Right nav Start -->
+                                <ul class="nav navbar-nav">
+                                    <li><a routerLink="index">Trang chủ</a></li>
+                                    <li>
+                                        <a href="#">Danh mục</a>
+                                        <ul class="dropdown-menu" id="select_category" name="categories_id" >
+                                            <li *ngFor="let a of categories"><a [routerLink]="['/menu']"
+                                                [queryParams]="{ category_id: a.categories_id }">{{a.categories_name}}</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">blog</a> 
+                                        <ul class="dropdown-menu">
+                                            <li><a href="blog-style1.html">Blogs Style 1</a></li>
+                                            <li><a href="blog-style2.html">Blogs Style 2</a></li>
+                                            <li><a href="blog-style3.html">Blogs Style 3</a></li>
+                                            <li>
+                                                <a href="#">Blog Detail</a>										  
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="blog-single-sidebar.html">With Sidebar</a></li>
+                                                    <li><a href="blog-single-full-width.html">Without Sidebar</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a routerLink="menu">Đồ uống</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a routerLink="menu">Danh sách đồ uống</a></li>
+                                            <!-- <li><a href="dishes-fullwidth.html">Dishes Style 2</a></li>
+                                            <li><a href="dishes-detail.html">dish detail</a></li> -->
+                                            <li><a routerLink="cart">Giỏ hàng</a></li>
+                                            <li><a routerLink="checkout">Thanh toán</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="FAQ.html">faq</a></li>
+                                    <li><a href="login-area.html">login area</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                                <!-- /.Right nav  End-->
+                            </div>
+                            <!-- /.navbar-collapse -->
+                        </div>
+                        <!-- /.col-md-12 -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container -->
+            </div>
+        </div>
+    </div>
+    <!--//==Navbar End==//-->
+</header>

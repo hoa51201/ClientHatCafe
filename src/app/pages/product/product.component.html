@@ -1,0 +1,273 @@
+<div class="page-header black-overlay">
+    <div class="container breadcrumb-section">
+        <div class="row pad-s15">
+            <div class="col-md-12">
+                <h2>Dishes Detail</h2>
+                <div class="clear"></div>
+                <div class="breadcrumb-box">
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li class="active">Dishes Detail</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//==Page Header End==//-->
+<!--//=========Dish Detail Start=========//-->
+<section class="page_single">
+    <div class="container">
+        <div class="row padTB100"   > 
+            <div class="prod-info-section" >
+                <div class="clearfix">
+                    <!--Thumbnail Column-->
+                    <div class="carousel-column col-lg-6 col-md-6 col-sm-5 col-xs-12"  >
+                        <div class="wa-product-main-image marB20">
+                            <a  class="fancybox" data-fancybox-group="group" title="Roasted Chicken"> <img src="assets/Images/image/products/{{item.product_image}}" alt=""> </a>
+                        </div>
+                    </div>
+                    <!--Content Column-->
+                    <div class="content-column col-lg-6 col-md-6 col-sm-7 col-xs-12">
+                        <div class="outer wow fadeInRight">
+                            <div class="title-box">
+                                <div class="inner marB30">
+                                    <h2> {{item.product_name}}</h2>
+                                    <span class="price">
+                                        {{item.product_prices | number}} VNĐ
+                                    </span>
+                                    <ul class="ratings">
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-star-half-o"></i></a></li>
+                                    </ul>
+                                    <p class="availability in-stock"><strong>Availability:</strong> <span>In stock</span></p>
+                                    <p>{{item.product_description}}</p>
+                                </div>
+                                <div class="clear"></div>
+                                <!--Options-->
+                                <div class="prod-options marB10">
+                                    <div class="clearfix">
+                                        <div class="col-md-7 col-sm-3 padL0">
+                                            <div class="form-group">
+                                                <label><strong>Quanty :</strong> </label>
+                                                <div class="clear"></div>
+                                                <input (click)="changeQuanty()" type="number" [(ngModel)]="item.product_quanty" name="qty"  max="10" min="0" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5 col-sm-4 padL0">
+                                            <div class="form-group">
+                                                <label><strong>Total :</strong> </label>
+                                                <div class="clear"></div>
+                                                <input (click)="changeQuanty()" disabled type="number" [(ngModel)]="item.product_total" name="qty"  max="10" min="0" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-sm-12 padL0 quantity">
+                                            <label><strong>Tags</strong></label>
+                                            <div class="tag-list">
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> chicken</a> 
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> icecream</a>   
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> chinese</a>
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> corn</a>    
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i>fish</a>
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> veg</a>
+                                                <a class="btnlight" href="#"><i class="fa fa-tags" aria-hidden="true"></i> italian</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Add-->
+                            <div class="add-options">
+                                <button type="button" class="theme-button" (click)="addToCartInProductDetail()">Order Now</button>
+                                <!-- <button type="button"
+
+                                                [attr.data-id]='product_id' 
+                                                [attr.data-images]='product_image' 
+                                                [attr.data-name]='product_name' 
+                                                [attr.data-prices]='product_prices'
+                                                [attr.data-quantity]='product_quanty' 
+            
+                                                
+                                class="theme-button marT10 cart-add theme-button">Order Now</button>
+                                <button type="button" class="theme-button"><span class="fa fa-heart"></span></button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//=========Dish Detail End=========//-->
+<!--//==Dishes Description Start==//-->
+<section class="page_single grey-bg">
+    <div class="container">
+        <div class="row padTB100">
+            <div class="prod-info-section">
+                <div class="clearfix">
+                    <div class="col-md-12">
+                        <div class="block-caption">
+                            <div class="centered-title">
+                                <h2>Discription <span class="heading-border"></span></h2>
+                                <div class="clear"></div>
+                                <em>doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo <br>inventore veritatis et quasi architecto beatae</em>
+                            </div>
+                            <p>Nam quis magna in dui fringilla sodales et at ante. Nulla condimentum sed magna ut Maecenas lacus ante, mattis sed euismod sed, iaculis sed libInteger tortor tellus, varius ac maximus at, vehicula nec purus. Ut at posuere sapien, ut molestie nisi. Donec mauris justo, Praesent sed interdum arcu, eget interdum elit. Proin quis sapien a ex ultrices condimentum eu vel neque. Donec maximus, erat eu mattis feugiat, nisl tellus vehicula lorem, ut ullamcorper ex risus eu magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                            <p>Condimentum sed magna ut Maecenas lacus ante, mattis sed euismod sed, iaculis sed libInteger tortor tellus, varius ac maximus at, vehicula nec purus. Ut at posuere sapien, ut molestie nisi. Donec mauris justo, Praesent sed interdum arcu, eget interdum elit. Proin quis sapien a ex ultrices condimentum eu vel neque. Donec maximus, erat eu mattis feugiat, nisl tellus vehicula lorem, ut ullamcorper ex risus eu magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur luctus felis vitae ante gravida, quis imperdiet mauris convallis. </p>
+                            <h4 class="title marT30 padB20">ingredients List</h4>
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <ul>
+                                        <li><a href="#">nterdum arcu, eget interdum </a></li>
+                                        <li><a href="#">is sapien a ex ultrices condimentum</a></li>
+                                        <li><a href="#">mattis feugiat, nisl tellus vehicula lorem</a></li>
+                                        <li><a href="#">Curabitur luctus felis vitae ante gravida</a></li>
+                                        <li><a href="#">condimentum eu vel neque. </a></li>
+                                        <li><a href="#">mattis sed euismod sed, iaculis sed li</a></li>
+                                        <li><a href="#">magnis dis parturient montes</a></li>
+                                        <li><a href="#">interdum arcu, eget interdum elit</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <ul>
+                                        <li><a href="#">nterdum arcu, eget interdum </a></li>
+                                        <li><a href="#">is sapien a ex ultrices condimentum</a></li>
+                                        <li><a href="#">mattis feugiat, nisl tellus vehicula lorem</a></li>
+                                        <li><a href="#">Curabitur luctus felis vitae ante gravida</a></li>
+                                        <li><a href="#">condimentum eu vel neque. </a></li>
+                                        <li><a href="#">mattis sed euismod sed, iaculis sed li</a></li>
+                                        <li><a href="#">magnis dis parturient montes</a></li>
+                                        <li><a href="#">interdum arcu, eget interdum elit</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12">
+                                    <ul>
+                                        <li><a href="#">nterdum arcu, eget interdum </a></li>
+                                        <li><a href="#">is sapien a ex ultrices condimentum</a></li>
+                                        <li><a href="#">mattis feugiat, nisl tellus vehicula lorem</a></li>
+                                        <li><a href="#">Curabitur luctus felis vitae ante gravida</a></li>
+                                        <li><a href="#">condimentum eu vel neque. </a></li>
+                                        <li><a href="#">mattis sed euismod sed, iaculis sed li</a></li>
+                                        <li><a href="#">magnis dis parturient montes</a></li>
+                                        <li><a href="#">interdum arcu, eget interdum elit</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//==Dishes Description End==//-->
+<!--//==Dishes Review Section Start==//-->	
+<section class="page_single">
+    <div class="container">
+        <div class="row padTB100">
+            <div class="prod-info-section">
+                <div class="clearfix">
+                    <div class="col-md-12 padT0">
+                        <div class="centered-title">
+                            <h2>Reviews for Rosted chiken <span class="heading-border"></span></h2>
+                            <div class="clear"></div>
+                        </div>
+                        <!--//==Comment List Start==//-->
+                        <div class="reviews-container padT20">
+                            <!--//==Comment Item==//-->
+                            <article class="review-box clearfix">
+                                <!--//==Thumbnail==//-->
+                                <figure class="rev-thumb">
+                                    <img src="assets/img/author/1.jpg" alt="">
+                                </figure>
+                                <!--//==Comment content==//-->
+                                <div class="rev-content">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <h4>john doe | <span>20 Jan 2017</span></h4>
+                                        </div>
+                                        <div class="rev-text col-md-12 col-sm-12 col-xs-12">
+                                            <p>sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. massa, convallis a pellentesq ue neCurabitu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!--//==Comment Item==//-->
+                            <article class="review-box clearfix">
+                                <!--//==Thumbnail==//-->
+                                <figure class="rev-thumb">
+                                    <img src="assets/img/author/2.jpg" alt="">
+                                </figure>
+                                <!--//==Comment content==//-->
+                                <div class="rev-content">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <h4>john doe | <span>10 Feb 2017</span></h4>
+                                        </div>
+                                        <div class="rev-text col-md-12 col-sm-12 col-xs-12">
+                                            <p>sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. massa, convallis a pellentesq ue neCurabitu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!--//==Comment Item==//-->
+                            <article class="review-box clearfix">
+                                <!--//==Thumbnail==//-->
+                                <figure class="rev-thumb">
+                                    <img src="assets/img/author/3.jpg" alt="">
+                                </figure>
+                                <!--//==Comment content==//-->
+                                <div class="rev-content">
+                                    <div class="row">
+                                        <div class="col-md-8 col-sm-12 col-xs-12">
+                                            <h4>john doe | <span>15 May 2017</span></h4>
+                                        </div>
+                                        <div class="rev-text col-md-12 col-sm-12 col-xs-12">
+                                            <p>sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. sapien massa, convallis a pellentesq ue neCurabitur aliquet quam id dui posuere. massa, convallis a pellentesq ue neCurabitu</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                        <!--//==Comment List End==//-->
+                    </div>
+                    <div class="col-md-12 padT30">
+                        <!--//==Section Heading Start==//-->
+                        <div class="centered-title">
+                            <h2>Submit Your Review <span class="heading-border"></span></h2>
+                            <div class="clear"></div>
+                        </div>
+                        <!--//==Section Heading End==//-->
+                        <div class="row">
+                            <div class="contact-form-section">
+                                <!--//==Comment Form Start==//-->
+                                <form class="contact-form">
+                                    <div class="col-md-6 form-group">
+                                        <input type="text" placeholder="Your Name">
+                                    </div>
+                                    <div class="col-md-6 form-group">
+                                        <input type="email" id="exampleInputEmail" placeholder="Your Email">
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <textarea name="contact_message" class="textarea-message" placeholder="Your Message" rows="10"></textarea>							
+                                    </div>
+                                    <div class="col-md-12 form-group">
+                                        <button type="submit" class="col-md-3 theme-button">submit </button>
+                                    </div>
+                                </form>
+                                <!--//==Comment Form End==//-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//==Dishes Review Section Start==//-->	
+<!--//=========Footer Start=========//-->

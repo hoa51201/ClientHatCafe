@@ -1,0 +1,14 @@
+#check-out-cart{
+    width: 20%;
+    font-size: 2rem;
+    right: 0rem;
+}
+.check-out-div{
+    margin: 4rem 0rem 0rem 0rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}   
+.btn-in-cart{
+    margin: 0rem 4rem 0rem 0rem;
+}
